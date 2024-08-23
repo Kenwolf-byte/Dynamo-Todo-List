@@ -1,6 +1,6 @@
-# flutter_application_1
+# Dynamo Todo List
 
-A new Flutter project.
+A new interesting Flutter project.
 
 ## Getting Started
 
