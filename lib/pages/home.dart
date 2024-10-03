@@ -64,6 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 controller: _contrlr,
+                maxLines: 4,
+                minLines: 1,
                 decoration: InputDecoration(
                   hintText: 'Begin Entry Here',
                   filled: true,

@@ -16,7 +16,7 @@ class ToDoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    var screen = MediaQuery.of(context).size;
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -27,33 +27,33 @@ class ToDoList extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.all(20),
-        width: screenWidth * 0.20,
+        width: screen.width * 0.20,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.blue,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Checkbox(
-                  value: taskCompleted,
-                  onChanged: onChanged,
-                  side: const BorderSide(color: Colors.black),
-                ),
-                Text(
-                  taskName,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      decoration: taskCompleted
-                          ? TextDecoration.lineThrough
-                          : TextDecoration.none,
-                      decorationThickness: 3,
-                      decorationColor: Colors.black),
-                ),
-              ],
+            Checkbox(
+              value: taskCompleted,
+              onChanged: onChanged,
+              side: const BorderSide(color: Colors.black),
+            ),
+            SizedBox(
+              width: screen.width * 0.560,
+              child: Text(
+                taskName,
+                style: TextStyle(
+                    overflow: TextOverflow.clip,
+                    color: Colors.black,
+                    fontSize: 20,
+                    decoration: taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                    decorationThickness: 3,
+                    decorationColor: Colors.black),
+              ),
             ),
             IconButton(
               icon: Icon(Icons.delete, color: Colors.red),
